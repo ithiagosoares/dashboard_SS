@@ -1,18 +1,18 @@
 import * as admin from 'firebase-admin';
 
 // Initialize only if we have the environment variables, to prevent build-time crashes
-if (!admin.apps.length && process.env.FIREBASE_PROJECT_ID) {
+if (!admin.apps.length && process.env.ADMIN_PROJECT_ID) {
   try {
     // Handling cases where private key contains escaped newlines
-    let privateKey = process.env.FIREBASE_PRIVATE_KEY;
+    let privateKey = process.env.ADMIN_PRIVATE_KEY;
     if (privateKey) {
       privateKey = privateKey.replace(/\\n/g, '\n');
     }
 
     admin.initializeApp({
       credential: admin.credential.cert({
-        projectId: process.env.FIREBASE_PROJECT_ID,
-        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+        projectId: process.env.ADMIN_PROJECT_ID,
+        clientEmail: process.env.ADMIN_CLIENT_EMAIL,
         privateKey: privateKey,
       }),
     });
