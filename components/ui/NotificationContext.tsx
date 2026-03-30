@@ -25,6 +25,18 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
   const addNotification = useCallback((message: string, type: NotificationType = "info") => {
     const id = Math.random().toString(36).substring(2, 9);
     setNotifications((prev) => [...prev, { id, message, type }]);
+    
+    // Play notification sound
+    try {
+      // Create a new Audio instance
+      const audio = new Audio('/notification.mp3');
+      audio.play().catch((error) => {
+        // Autoplay may be blocked by browser policies if user hasn't interacted yet
+        console.warn('Audio playback failed (possibly blocked by browser):', error);
+      });
+    } catch (error) {
+      console.error('Audio could not be initialized:', error);
+    }
   }, []);
 
   const removeNotification = useCallback((id: string) => {
