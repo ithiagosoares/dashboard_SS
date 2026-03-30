@@ -1,7 +1,8 @@
 import React from 'react';
 import { MetricCard } from '@/components/ui/MetricCard';
 import { ProgressSection } from '@/components/ui/ProgressSection';
-import { ShoppingBag, Briefcase, RefreshCw, Calendar, Clock, DollarSign, Target, Sun } from 'lucide-react';
+import { ShoppingBag, Briefcase, RefreshCw, Calendar, Clock, DollarSign, Target } from 'lucide-react';
+import Image from 'next/image';
 
 export default function DashboardPage() {
   // Mock data for display based on the image
@@ -41,8 +42,7 @@ export default function DashboardPage() {
         <header className="flex flex-col md:flex-row justify-between items-start md:items-center pb-4">
           <div className="flex items-center gap-3">
             <div style={{ color: 'var(--solar-orange)' }}>
-              {/* Using a Lucide generic icon for Sun/Solar logo */}
-              <Sun className="h-10 w-10" strokeWidth={1.5} />
+              <Image src="/Favicon.png" alt="Solar System Logo" width={40} height={40} className="object-contain" />
             </div>
             <div>
               <h1 className="text-3xl font-bold tracking-tight" style={{ color: 'var(--solar-orange)' }}>Solar System</h1>
@@ -186,8 +186,8 @@ export default function DashboardPage() {
         {/* Footer / Actions */}
         <footer className="flex justify-between items-center py-6 mt-4">
           <div className="flex items-center gap-4 text-xs text-gray-600">
-            <div className="flex items-center gap-1">
-              <Sun className="h-3 w-3" />
+            <div className="flex items-center gap-2">
+              <Image src="/Favicon.png" alt="Solar System Logo" width={16} height={16} className="object-contain" />
               <span>Solar System © 2026</span>
             </div>
           </div>

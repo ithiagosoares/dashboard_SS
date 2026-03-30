@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { LogOut, BarChart3 } from 'lucide-react';
 import { SidebarNav } from '@/components/layout/SidebarNav';
+import { MobileNav } from '@/components/layout/MobileNav';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,10 +11,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <aside className="hidden w-64 flex-col border-r border-[var(--color-card-border)] bg-[var(--color-card)] lg:flex">
         <div className="flex h-16 items-center px-6 border-b border-[var(--color-card-border)]">
           <div className="flex items-center gap-2 font-bold text-xl text-[var(--color-foreground)] tracking-tight">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-upper-blue)] text-white">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-solar-orange)] text-white">
               <BarChart3 className="h-5 w-5" />
             </div>
-            UpperAnalytics
+            Dashboard
           </div>
         </div>
         
@@ -32,11 +33,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         {/* Mobile Header */}
         <header className="flex h-16 items-center justify-between border-b border-[var(--color-card-border)] bg-[var(--color-card)] px-4 lg:hidden">
           <div className="flex items-center gap-2 font-bold text-lg text-[var(--color-foreground)]">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[var(--color-upper-blue)] text-white">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[var(--color-solar-orange)] text-white">
               <BarChart3 className="h-4 w-4" />
             </div>
-            UpperAnalytics
+            Dashboard
           </div>
+          <MobileNav />
         </header>
 
         <main className="flex-1 overflow-y-auto">

@@ -7,10 +7,10 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-[var(--color-background)] px-4">
       <div className="w-full max-w-sm rounded-2xl border border-[var(--color-card-border)] bg-[var(--color-card)] p-8 shadow-sm">
         <div className="mb-8 flex flex-col items-center justify-center text-center">
-          <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-upper-blue)] text-white shadow-lg">
+          <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-solar-orange)] text-white shadow-lg">
             <BarChart3 className="h-6 w-6" />
           </div>
-          <h1 className="text-2xl font-bold text-[var(--color-foreground)] tracking-tight">Login UpperAnalytics</h1>
+          <h1 className="text-2xl font-bold text-[var(--color-foreground)] tracking-tight">Login Dashboard</h1>
           <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">Entre para acessar seu dashboard de vendas.</p>
         </div>
         
