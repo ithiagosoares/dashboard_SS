@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, Settings } from 'lucide-react';
+import { LayoutDashboard, Settings, MessageCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function SidebarNav() {
@@ -14,6 +14,11 @@ export function SidebarNav() {
       name: "Visão Geral",
       href: "/dashboard",
       icon: LayoutDashboard
+    },
+    {
+      name: "Perguntas",
+      href: "/dashboard/perguntas",
+      icon: MessageCircle
     },
     {
       name: "Configurações",
