@@ -3,6 +3,10 @@ import { BarChart3 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function LoginPage() {
+  const mlAppId = process.env.ML_APP_ID || '';
+  const redirectUri = "https://dashboard-ss--dashboard-ss-6f0aa.us-central1.hosted.app/api/auth/callback";
+  const authUrl = `https://auth.mercadolivre.com.br/authorization?response_type=code&client_id=${mlAppId}&redirect_uri=${redirectUri}`;
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-[var(--color-background)] px-4">
       <div className="w-full max-w-sm rounded-2xl border border-[var(--color-card-border)] bg-[var(--color-card)] p-8 shadow-sm">
@@ -27,6 +31,19 @@ export default function LoginPage() {
           <Link href="/dashboard" className="mt-6 flex w-full items-center justify-center rounded-lg bg-[var(--color-upper-blue)] px-4 py-2 font-medium text-white transition-all hover:bg-[var(--color-upper-blue-dark)] hover:shadow-md">
             Entrar
           </Link>
+
+          <div className="relative mt-6">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t border-[var(--color-card-border)]" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-[var(--color-card)] px-2 text-gray-500">Ou continue com</span>
+            </div>
+          </div>
+          
+          <a href={authUrl} className="mt-4 flex w-full items-center justify-center rounded-lg border border-[#FFE600] bg-[#FFE600] text-[#2D3277] px-4 py-2 font-bold transition-all hover:bg-[#FFD000] hover:shadow-md">
+            Conectar com Mercado Livre
+          </a>
         </form>
       </div>
     </div>

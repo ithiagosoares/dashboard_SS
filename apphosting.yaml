@@ -21,3 +21,7 @@ env:
     secret: ADMIN_CLIENT_EMAIL
   - variable: ADMIN_PRIVATE_KEY
     secret: ADMIN_PRIVATE_KEY
+  - variable: ML_APP_ID
+    secret: ML_APP_ID
+  - variable: ML_CLIENT_SECRET
+    secret: ML_CLIENT_SECRET
